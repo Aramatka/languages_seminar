@@ -18,9 +18,9 @@ else System.Console.WriteLine("Максимальное число " + num1);*/
 
 2, 3, 7 -> 7
 44 5 78 -> 78
-22 3 9 -> 22
+22 3 9 -> 22*/
 
-System.Console.WriteLine("Введите первое число:");
+/*System.Console.WriteLine("Введите первое число:");
 int num1 = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Введите второе число:");
 int num2 = Convert.ToInt32(Console.ReadLine());
@@ -61,7 +61,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int digit = 2;
 
-while (digit < number)
+while (digit <= number)
 {
     System.Console.Write(digit + ", ");
     digit +=2;
