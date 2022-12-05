@@ -76,7 +76,7 @@ System.Console.WriteLine($"Cуммa элементов, стоящих на не
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
 //[3 7 22 2 78] -> 76
-double [] Array (int size)
+/*double [] Array (int size)
 {
     double [] newArray = new double [size];
     for (int i =0; i<size; i++)
@@ -106,14 +106,10 @@ double DiffNum(double[] array)
     return res;
 }
 
-
-
 System.Console.WriteLine("Введите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 
 double [] newarray = Array (size);
 ShowArray (newarray);
 System.Console.WriteLine($"Разница между максимальным и минимальным элементами массива: {Math.Round(DiffNum(newarray),3)}.");
-
-//var random = new Random();
-//Array[i]=Math.Round(Convert.ToDouble(random.Next(minimum*100,maximum*100+1)/100.0),2);
+*/
