@@ -5,7 +5,7 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9 */
 
-/*double [,] BivariateArray (int line, int column, int minDot, int maxDot)
+double [,] BivariateArrayD (int line, int column, int minDot, int maxDot)
 {
     double [,] newArray = new double [line, column];
     for (int i =0; i<line; i++)
@@ -14,7 +14,7 @@ m = 3, n = 4.
     return newArray;
 }
 
-void ShowBivariateArray (double [,] array)
+void ShowBivariateArrayD (double [,] array)
 {
     for(int i=0; i<array.GetLength(0); i++)
     {
@@ -26,7 +26,7 @@ void ShowBivariateArray (double [,] array)
     }
     Console.WriteLine();
 }
-
+/*
 System.Console.WriteLine("Enter the number of lines M:  ");
 int M = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter the number of column N:  ");
@@ -35,9 +35,9 @@ System.Console.WriteLine("Enter the minimum number:  ");
 int min = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter the maximum number:  ");
 int max = Convert.ToInt32(Console.ReadLine());
-double[,] array1 = BivariateArray (M, N,min, max);
+double[,] array1 = BivariateArrayD (M, N,min, max);
 
-ShowBivariateArray (array1); */
+ShowBivariateArrayD (array1); */
 
 /*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
 и возвращает значение этого элемента или же указание, что такого элемента нет.
@@ -77,7 +77,7 @@ int Position (int [,]array, int positionI, int positionJ)
     return number;
 }
 
-
+/*
 System.Console.WriteLine("Enter the number of lines:  ");
 int line = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter the number of column:  ");
@@ -94,11 +94,11 @@ int positionI = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter the J position:  ");
 int positionJ = Convert.ToInt32(Console.ReadLine());
 
-if (positionI>array1.GetLength(0) && positionJ >array1.GetLength(1)) 
+if (positionI>array1.GetLength(0) || positionJ >array1.GetLength(1) || positionJ <0 || positionI <0 ) 
 {
     System.Console.WriteLine("There is no position with the following parameters.");
 }
-else System.Console.WriteLine($" There is position of element {Position(array1, positionI-1, positionJ-1)}.");
+else System.Console.WriteLine($" There is position of element {Position(array1, positionI-1, positionJ-1)}."); */
 
 
 /*Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
@@ -107,3 +107,45 @@ else System.Console.WriteLine($" There is position of element {Position(array1, 
 5 9 2 3
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
+
+double [] ArithmeticMeanArray(int [,] source_array)
+{
+int [] sumarray = new int [source_array.GetLength(1)];
+double [] meanarrey = new double [source_array.GetLength(1)];
+ for(int j=0; j<source_array.GetLength(1); j++)
+    {
+        for(int i=0; i<source_array.GetLength(0); i++)
+        {
+            sumarray [j] = sumarray[j] + source_array [i,j];
+            if ( i==source_array.GetLength(0)-1) 
+            meanarrey [j] = sumarray[j]*10/source_array.GetLength(0);
+            meanarrey [j] = Math.Round(meanarrey [j]/10, 2);
+
+        }
+    }
+return meanarrey;
+}
+
+void ShowArray (double [] array)
+{
+    for(int i=0; i<array.Length; i++)
+    Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+/*
+System.Console.WriteLine("Enter the number of lines:  ");
+int line = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Enter the number of column:  ");
+int column = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Enter the minimum number:  ");
+int min = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("Enter the maximum number:  ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] array1 = BivariateArray (line, column,min, max);
+
+ShowBivariateArray (array1);
+
+double [] meanarray = ArithmeticMeanArray(array1);
+
+ShowArray (meanarray);*/
